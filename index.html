@@ -63,41 +63,58 @@
             .main-header-area {
                 background: #fff !important;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                position: relative;
             }
-            /* Make the row holding logo a flex row aligned center */
+            /* Single flex row: logo left, toggler right, perfectly centered */
             .main-header-area .container > .row {
                 display: flex !important;
                 align-items: center !important;
                 flex-wrap: nowrap !important;
                 min-height: 70px;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
             }
-            /* Logo column takes remaining space */
+            /* Logo column — no extra vertical padding */
             .main-header-area .col-xl-3 {
                 flex: 1 1 auto;
+                display: flex !important;
+                align-items: center !important;
             }
-            /* SlickNav menu sits at the end of the same row */
-            .mobile_menu {
+            .main-header-area .logo-img {
+                padding: 0 !important;
+                margin: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+            /* Toggler column */
+            .main-header-area .col-xl-9 {
+                flex: 0 0 auto;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: flex-end;
-                flex: 0 0 auto;
-                padding-right: 5px;
             }
-            /* The injected slicknav_menu wrapper */
+            /* SlickNav wrapper */
+            .mobile_menu,
             .slicknav_menu {
+                display: flex !important;
+                align-items: center !important;
                 background: transparent !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                line-height: 1 !important;
             }
             /* The hamburger button itself */
             .slicknav_btn {
                 margin: 0 !important;
+                padding: 6px 8px !important;
                 position: static !important;
                 transform: none !important;
                 float: none !important;
                 display: flex !important;
                 align-items: center !important;
+                line-height: 1 !important;
+            }
+            .slicknav_icon {
+                margin: 0 !important;
             }
             /* Make gallery stack vertically on mobile like the reference template */
             .gallery_area .grid {
@@ -251,6 +268,7 @@
                         </div>
                         <div class="single_time_line">
                             <h3>Wedding Day</h3>
+                            <p>Two souls, one destiny. On this auspicious day, Vaishnavi & Suraj begin their forever together, surrounded by the love and blessings of family.</p>
                         </div>
                     </div>
                 </div>
