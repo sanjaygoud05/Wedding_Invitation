@@ -58,22 +58,46 @@
             flex-direction: column;
             justify-content: center;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .main-names { font-size: 2.4rem !important; }
             .main-header-area {
                 background: #fff !important;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                display: flex;
-                align-items: center;
-                min-height: 80px;
                 position: relative;
             }
+            /* Make the row holding logo a flex row aligned center */
+            .main-header-area .container > .row {
+                display: flex !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                min-height: 70px;
+            }
+            /* Logo column takes remaining space */
+            .main-header-area .col-xl-3 {
+                flex: 1 1 auto;
+            }
+            /* SlickNav menu sits at the end of the same row */
+            .mobile_menu {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: flex-end;
+                flex: 0 0 auto;
+                padding-right: 5px;
+            }
+            /* The injected slicknav_menu wrapper */
+            .slicknav_menu {
+                background: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            /* The hamburger button itself */
             .slicknav_btn {
-                top: 50% !important;
-                transform: translateY(-50%) !important;
-                margin-top: 0 !important;
-                position: absolute !important;
-                right: 15px !important;
+                margin: 0 !important;
+                position: static !important;
+                transform: none !important;
+                float: none !important;
+                display: flex !important;
+                align-items: center !important;
             }
             /* Make gallery stack vertically on mobile like the reference template */
             .gallery_area .grid {
@@ -106,8 +130,8 @@
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
+                    <div class="row align-items-center flex-nowrap">
+                        <div class="col-xl-3 col-lg-3 col">
                             <div class="logo-img" style="padding: 15px 0;">
                                 <a href="index.html" style="text-decoration: none;">
                                     <div style="border: 1.5px solid #C78665; padding: 10px 20px; display: inline-block;">
@@ -116,7 +140,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-9 col-lg-9">
+                        <div class="col-xl-9 col-lg-9 col-auto ms-auto">
                             <div class="main-menu d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
@@ -128,8 +152,6 @@
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
-                        <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
