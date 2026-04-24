@@ -60,64 +60,154 @@
         }
         @media (max-width: 992px) {
             .main-names { font-size: 2.4rem !important; }
-            .main-header-area {
-                background: #fff !important;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                position: relative;
+
+            /* ── Header wrapper must be relative so dropdown anchors to it ── */
+            header {
+                position: relative !important;
+                overflow: visible !important;
             }
-            /* Single flex row: logo left, toggler right, perfectly centered */
+            .header-area, .main-header-area {
+                background: #fff !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+                position: relative !important;
+                overflow: visible !important;
+            }
+
+            /* ── Row: logo on left, toggle on right, vertically centered ── */
+            .main-header-area .container {
+                overflow: visible !important;
+            }
             .main-header-area .container > .row {
                 display: flex !important;
-                align-items: center !important;
                 flex-wrap: nowrap !important;
-                min-height: 70px;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                min-height: 68px !important;
+                margin: 0 !important;
+                padding: 0 12px !important;
             }
-            /* Logo column — no extra vertical padding */
+
+            /* ── Logo column ── */
+            .main-header-area .col-xl-3,
+            .main-header-area [class*='col-'] {
+                padding: 0 !important;
+            }
             .main-header-area .col-xl-3 {
-                flex: 1 1 auto;
+                flex: 1 1 auto !important;
+                max-width: none !important;
                 display: flex !important;
                 align-items: center !important;
             }
             .main-header-area .logo-img {
                 padding: 0 !important;
                 margin: 0 !important;
-                display: flex !important;
-                align-items: center !important;
             }
-            /* Toggler column */
+
+            /* ── Toggle column ── */
             .main-header-area .col-xl-9 {
-                flex: 0 0 auto;
+                flex: 0 0 auto !important;
+                max-width: none !important;
                 display: flex !important;
                 align-items: center !important;
-                justify-content: flex-end;
+                justify-content: flex-end !important;
             }
-            /* SlickNav wrapper */
-            .mobile_menu,
-            .slicknav_menu {
+
+            /* ── SlickNav wrappers ── */
+            .mobile_menu {
                 display: flex !important;
                 align-items: center !important;
                 background: transparent !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                line-height: 1 !important;
             }
-            /* The hamburger button itself */
-            .slicknav_btn {
+            .slicknav_menu {
+                background: transparent !important;
+                padding: 0 !important;
                 margin: 0 !important;
-                padding: 6px 8px !important;
-                position: static !important;
-                transform: none !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+
+            /* ── Hamburger button ── */
+            .slicknav_btn {
                 float: none !important;
                 display: inline-flex !important;
+                flex-direction: column !important;
                 align-items: center !important;
-                line-height: 1 !important;
-            }
-            .slicknav_icon {
+                justify-content: center !important;
                 margin: 0 !important;
+                padding: 8px 10px !important;
+                position: static !important;
+                transform: none !important;
+                border: 2px solid #C78665 !important;
+                border-radius: 5px !important;
+                background: transparent !important;
+                cursor: pointer !important;
+                gap: 4px !important;
             }
-            /* Make gallery stack vertically on mobile like the reference template */
+
+            /* ── Hamburger bars — DARK ── */
+            .slicknav_btn .slicknav_icon-bar {
+                display: block !important;
+                width: 22px !important;
+                height: 2px !important;
+                background: #C78665 !important;
+                border-radius: 2px !important;
+                margin: 3px 0 !important;
+            }
+            .slicknav_menu .slicknav_icon {
+                float: none !important;
+                width: auto !important;
+                height: auto !important;
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .slicknav_menu .slicknav_icon:before {
+                display: none !important;
+            }
+
+            /* ── Dropdown: appears right below the header, full width ── */
+            .slicknav_nav {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                z-index: 9999 !important;
+                background: #fff !important;
+                float: none !important;
+                margin: 0 !important;
+                padding: 5px 0 !important;
+                border-top: 2px solid #C78665 !important;
+                border-bottom: 2px solid #C78665 !important;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+                list-style: none !important;
+            }
+            .slicknav_nav li {
+                display: block !important;
+                width: 100% !important;
+            }
+            .slicknav_nav a {
+                display: block !important;
+                text-align: left !important;
+                padding: 13px 20px !important;
+                font-size: 15px !important;
+                font-weight: 500 !important;
+                color: #333 !important;
+                text-decoration: none !important;
+                border-bottom: 1px solid #f0ebe7 !important;
+            }
+            .slicknav_nav a:hover {
+                background: #C78665 !important;
+                color: #fff !important;
+            }
+            .slicknav_nav li:last-child > a {
+                border-bottom: none !important;
+            }
+
+            /* Gallery stack on mobile */
             .gallery_area .grid {
                 position: relative !important;
                 height: auto !important;
