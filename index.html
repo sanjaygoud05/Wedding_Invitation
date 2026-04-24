@@ -76,6 +76,7 @@
             /* ── Row: logo on left, toggle on right, vertically centered ── */
             .main-header-area .container {
                 overflow: visible !important;
+                position: static !important;
             }
             .main-header-area .container > .row {
                 display: flex !important;
@@ -85,6 +86,7 @@
                 min-height: 68px !important;
                 margin: 0 !important;
                 padding: 0 12px !important;
+                position: static !important;
             }
 
             /* ── Logo column ── */
@@ -97,6 +99,7 @@
                 max-width: none !important;
                 display: flex !important;
                 align-items: center !important;
+                position: static !important;
             }
             .main-header-area .logo-img {
                 padding: 0 !important;
@@ -110,6 +113,7 @@
                 display: flex !important;
                 align-items: center !important;
                 justify-content: flex-end !important;
+                position: static !important;
             }
 
             /* ── SlickNav wrappers ── */
@@ -207,6 +211,27 @@
                 border-bottom: none !important;
             }
 
+            /* Venue section and gap fixes on mobile */
+            .address_info {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .single_address {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .location_area, .map-container, #map {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .footer {
+                margin-top: 0 !important;
+            }
+            
             /* Gallery stack on mobile */
             .gallery_area .grid {
                 position: relative !important;
